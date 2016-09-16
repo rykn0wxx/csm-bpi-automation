@@ -24,7 +24,6 @@ angular.module('mud')
 		];
 
 		function headRef() {
-			console.log('headRef');
 			d3.json('assets/datasource/header-mapping.json', function(data) {
 				data.headers.forEach(function(d, i) {
 					d.rowIndex = i;
@@ -101,15 +100,18 @@ angular.module('mud')
 				return defer.promise;
 			}
 
+			var dFormat = d3.time.format('%m/%d/%Y %H:%M');
+
 			function ticketData() {
 				var defer = $q.defer();
 				d3.json('assets/datasource/tickets.json', function(data) {
 					data.forEach(function(d, i) {
 						d.rowIndex = i;
 						d.id = i;
-						d.count = +1;
-						d.openedDate = new Date(d.openedDate);
-						d.resolvedDate = new Date(d.resolvedDate);
+						d.count = parseInt(1);
+						d.openedDate = dFormat.parse(d.openedDate);
+						d.resolvedDate = dFormat.parse(d.resolvedDate);
+						d.resolvedFlag = (d.resolvedDate === null)? parseInt(0):parseInt(1);
 						var grp = _.filter(config.groups, function(v, k) {return _.includes(v,d.assignedGroup);})[0];
 						d.group = grp || _.set(config.defaultGroup, 'groupName', d.assignedGroup);
 					});

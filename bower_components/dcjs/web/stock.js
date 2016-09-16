@@ -1,6 +1,6 @@
 //# dc.js Getting Started and How-To Guide
 'use strict';
-
+ 
 /* jshint globalstrict: true */
 /* global dc,d3,crossfilter */
 
@@ -59,10 +59,13 @@ d3.csv("ndx.csv", function (data) {
             //See the [crossfilter API](https://github.com/square/crossfilter/wiki/API-Reference) for reference.
             var ndx = crossfilter(data);
             var all = ndx.groupAll();
-
+            $.mud.ndx = ndx;
+            $.mud.all = all;
             var yearlyDimension = ndx.dimension(function (d) {
                 return d3.time.year(d.dd).getFullYear();
             });
+            $.mud.yearlyDimension = yearlyDimension;
+
             var yearlyPerformanceGroup = yearlyDimension.group().reduce(
                     /* callback for when data is added to the current filter results */
                     function (p, v) {
@@ -91,6 +94,7 @@ d3.csv("ndx.csv", function (data) {
                         return {count: 0, absGain: 0, fluctuation: 0, fluctuationPercentage: 0, sumIndex: 0, avgIndex: 0, percentageGain: 0};
                     }
             );
+            $.mud.yearlyPerformanceGroup = yearlyPerformanceGroup;
 
             var dateDimension = ndx.dimension(function (d) {
                 return d.dd;
@@ -106,6 +110,10 @@ d3.csv("ndx.csv", function (data) {
             var volumeByMonthGroup = moveMonths.group().reduceSum(function (d) {
                 return d.volume / 500000;
             });
+            $.mud.dateDimension = dateDimension;
+            $.mud.moveMonths = moveMonths;
+            $.mud.monthlyMoveGroup = monthlyMoveGroup;
+            $.mud.volumeByMonthGroup = volumeByMonthGroup;
             var indexAvgByMonthGroup = moveMonths.group().reduce(
                     function (p, v) {
                         ++p.days;
@@ -123,7 +131,7 @@ d3.csv("ndx.csv", function (data) {
                         return {days: 0, total: 0, avg: 0};
                     }
             );
-
+            $.mud.indexAvgByMonthGroup = indexAvgByMonthGroup;
             var gainOrLoss = ndx.dimension(function (d) {
                 return +d.open > +d.close ? "Loss" : "Gain";
             });

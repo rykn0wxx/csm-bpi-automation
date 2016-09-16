@@ -17,6 +17,7 @@
   "homepage": "https://github.com/rykn0wxx/csm-bpi-automation#readme",
   "devDependencies": {
     "autoprefixer-core": "^6.0.1",
+    "bower-npm-resolver": "^0.6.0",
     "grunt": "^1.0.1",
     "grunt-concurrent": "^2.3.1",
     "grunt-contrib-connect": "^1.0.2",
@@ -24,7 +25,6 @@
     "grunt-contrib-less": "^1.4.0",
     "grunt-contrib-livereload": "^0.1.2",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-reload": "^0.2.0",
     "grunt-wiredep": "^3.0.1",
     "jit-grunt": "^0.10.0",
     "jshint-stylish": "^2.2.1",

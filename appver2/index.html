@@ -1,0 +1,62 @@
+<!doctype html>
+<html ng-app="mud" lang="en" ng-controller="GlobalCtrl as glb" ng-cloak>
+	<head> 
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+
+		<title>CSM and BPI Dashboard</title>
+		
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		 
+		<!-- build:css(.) styles/vendor.css -->
+		<!-- bower:css -->
+		<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+		<link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
+		<link rel="stylesheet" href="../bower_components/dcjs/dc.css" />
+		<!-- endbower -->
+		<!-- endbuild -->
+
+		
+		<!-- build:css(.) styles/main.css -->		
+		<link rel="stylesheet" type="text/css" href="styles/kohana.css" />
+		<!-- endbuild -->
+	</head>
+	<body class="csm" layout-row>
+		
+		<div id="preloader" ng-if="!doneLoading" class="unwrapping">
+			<div></div>
+		</div>
+		
+		<section class="page-content" ng-view></section>
+		
+		<!-- build:js(.) scripts/vendor.js -->
+		<!-- bower:js -->
+		<script src="../bower_components/jquery/dist/jquery.js"></script>
+		<script src="../bower_components/angular/angular.js"></script>
+		<script src="../bower_components/d3/d3.js"></script>
+		<script src="../bower_components/lodash/lodash.js"></script>
+		<script src="../bower_components/highcharts/highcharts.js"></script>
+		<script src="../bower_components/highcharts/highcharts-more.js"></script>
+		<script src="../bower_components/highcharts/modules/exporting.js"></script>
+		<script src="../bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
+		<script src="../bower_components/angular-messages/angular-messages.js"></script>
+		<script src="../bower_components/angular-aria/angular-aria.js"></script>
+		<script src="../bower_components/angular-animate/angular-animate.js"></script>
+		<script src="../bower_components/angular-material/angular-material.js"></script>
+		<script src="../bower_components/angular-route/angular-route.js"></script>
+		<script src="../bower_components/less/dist/less.js"></script>
+		<script src="../bower_components/crossfilter/crossfilter.js"></script>
+		<script src="../bower_components/dcjs/dc.js"></script>
+		<!-- endbower -->
+		<!-- endbuild -->
+
+		<script type="text/javascript" src="assets/app.js"></script>
+		<script type="text/javascript" src="assets/services/csmdataprovider.js"></script>
+		<script type="text/javascript" src="assets/directives/csm-widget.js"></script>
+		<script type="text/javascript" src="assets/views/main/main.js"></script>
+
+	</body>
+</html>

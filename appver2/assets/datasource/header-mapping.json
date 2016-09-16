@@ -1,0 +1,53 @@
+{
+	"headers": [{
+		"request.requested_for.location.name": {
+			"name": "locationName",
+			"field": "request.requested_for.location.name"
+		}
+	}, {
+		"location": {
+			"name": "locationName",
+			"field": "location"
+		}
+	}, {
+		"opened_at": {
+			"name": "openedDate",
+			"field": "opened_at"
+		}
+	}, {
+		"contact_type": {
+			"name": "contactType",
+			"field": "contact_type"
+		}
+	}, {
+		"request_item.cat_item": {
+			"name": "itemSymptom",
+			"field": "request_item.cat_item"
+		}
+	}, {
+		"u_symptom.u_description": {
+			"name": "itemSymptom",
+			"field": "u_symptom.u_description"
+		}
+	}, {
+		"closed_at": {
+			"name": "closedDate",
+			"field": "closed_at"
+		}
+	}, {
+		"assignment_group.name": {
+			"name": "assignedGroup",
+			"field": "assignment_group.name"
+		}
+	}, {
+		"priority": {
+			"name": "priorityLevel",
+			"field": "priority"
+		}
+	}, {
+		"sys_class_name": {
+			"name": "ticketType",
+			"field": "sys_class_name"
+		}
+	}]
+}

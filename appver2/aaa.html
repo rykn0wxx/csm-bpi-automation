@@ -1,0 +1,14 @@
+<ul>
+        <!--
+            The bnFriends directive is going to be defined at two different priorities
+            that allow the same directive to link both BEFORE and AFTER the ngRepeat
+            directive does its transclusion.
+        -->
+        <li
+            bn-friends
+            ng-repeat="friend in friends">
+
+            {{ friend.name }}
+
+        </li>
+    </ul>

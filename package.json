@@ -1,0 +1,33 @@
+{
+  "name": "csm-bpi-automation",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rykn0wxx/csm-bpi-automation.git"
+  },
+  "author": "rykn0wxx <raurici666@gmail.com>",
+  "license": "ISC",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "homepage": "https://github.com/rykn0wxx/csm-bpi-automation#readme",
+  "devDependencies": {
+    "autoprefixer-core": "^6.0.1",
+    "grunt": "^1.0.1",
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-livereload": "^0.1.2",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-reload": "^0.2.0",
+    "grunt-wiredep": "^3.0.1",
+    "jit-grunt": "^0.10.0",
+    "jshint-stylish": "^2.2.1",
+    "time-grunt": "^1.4.0"
+  }
+}

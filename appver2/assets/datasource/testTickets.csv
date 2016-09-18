@@ -1,0 +1,7 @@
+projectName,openedDate,resolvedDate,locationName,itemSymptom,assignedGroup,contactType,priorityLevel,taskType
+Novelisa,08/31/2015 16:25:00,09/15/2016 18:09:00,NNA/Corp - Atlanta HQ,Software Installation Request,IT SCCM Software Distribution Service Desk L2,Phone,3 - Moderate,Catalog Task
+Novelis,02/15/2015 07:17:00,01/01/1900 00:00:00,NNA/Corp - Atlanta HQ,Service Now - All Other Issues,ServiceNow Support L2,Phone,3 - Normal,Incident
+Novelis,08/15/2015 07:17:00,09/01/2016 18:09:00,NNA/Corp - Atlanta HQ,Service Now - All Other Issues,ServiceNow Support L2,Phone,3 - Normal,Incident
+JD,08/31/2015 16:25:00,09/15/2016 18:09:00,NNA/Corp - Atlanta HQ,Software Installation Request,IT SCCM Software Distribution Service Desk L2,Phone,3 - Moderate,Catalog Task
+JD,02/15/2015 07:17:00,01/01/1900 00:00:00,NNA/Corp - Atlanta HQ,Service Now - All Other Issues,ServiceNow Support L2,Phone,3 - Normal,Incident
+JD,08/15/2015 07:17:00,09/01/2016 18:09:00,NNA/Corp - Atlanta HQ,Service Now - All Other Issues,ServiceNow Support L2,Phone,3 - Normal,Incident

@@ -22,10 +22,10 @@ function ($routeProvider, $mdThemingProvider, $sceDelegateProvider, $mdAriaProvi
 		.warnPalette('pink')
 		.backgroundPalette('grey', {'default': '500'})
 		.dark();
-  $mdThemingProvider.theme('dark-cyan').backgroundPalette('cyan').dark();
-  $mdThemingProvider.theme('dark-light-blue').backgroundPalette('light-blue').dark();
-  $mdThemingProvider.theme('dark-purple').backgroundPalette('deep-purple').dark();
-  $mdThemingProvider.theme('dark-blue').backgroundPalette('blue').dark();
+	$mdThemingProvider.theme('dark-cyan').backgroundPalette('cyan').dark();
+	$mdThemingProvider.theme('dark-light-blue').backgroundPalette('light-blue').dark();
+	$mdThemingProvider.theme('dark-purple').backgroundPalette('deep-purple').dark();
+	$mdThemingProvider.theme('dark-blue').backgroundPalette('blue').dark();
 	$mdThemingProvider.theme('dark-grey')
 		.primaryPalette('grey', {'default': '400'})
 		.accentPalette('grey', {'default': '500'})
@@ -39,10 +39,10 @@ function ($routeProvider, $mdThemingProvider, $sceDelegateProvider, $mdAriaProvi
 			controllerAs: 'main'
 		})
 		.when('/dashboard/:id', {
-        templateUrl: 'assets/views/dashboard/dashboard.html',
-        controller: 'DashboardCtrl',
-        controllerAs: 'dashboard'
-      })
+				templateUrl: 'assets/views/dashboard/dashboard.html',
+				controller: 'DashboardCtrl',
+				controllerAs: 'dashboard'
+			})
 		.otherwise({
 			redirectTo: '/main'
 		});
@@ -114,3 +114,9 @@ function ($routeProvider, $mdThemingProvider, $sceDelegateProvider, $mdAriaProvi
 	}];
 }]);
 
+Date.prototype.yyyymmdd = function() {
+	var yyyy = this.getFullYear().toString();
+	var mm = (this.getMonth() + 1).toString();
+	var dd = this.getDate().toString();
+	return yyyy + ' - ' + (mm[1] ? mm : "0" + mm[0]) + ' - ' + (dd[1] ? dd : "0" + dd[0]);
+};

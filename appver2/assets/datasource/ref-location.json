@@ -1,0 +1,19 @@
+{
+	"locations" :[{
+		"prefix":"NA",
+		"regionName":"Asia",
+		"regionCode":"NA"
+		}, {
+		"prefix":"NE",
+		"regionName":"Europe",
+		"regionCode":"NE"
+		}, {
+		"prefix":"NN",
+		"regionName":"N.America",
+		"regionCode":"NNA"
+		}, {
+		"prefix":"NS",
+		"regionName":"S.America",
+		"regionCode":"NSA"
+		}]
+}

@@ -1,11 +1,45 @@
 <ng-include src="'assets/views/top-menu.html'"></ng-include>
-
-	<div style="display:none;" class="row block-widget" layout="row" layout-wrap layout-padding layout-align="space-around center">
-		<csm-widget widget-info="projects"></csm-widget>
+	<!--
+	<div ng-model="tcounter">
+			{{tcounter || JSON}}
 	</div>
 
 	<div class="row block-widget" layout="row" layout-wrap layout-padding layout-align="space-around center">
-		<div id="piechattty"></div>
-		<div id="monthly-move-chart"></div>
-		<div id="monthly-volume-chart"></div>
-	</div>		
+		<div id="proj-list" class="dc-chart">
+			<strong>Projects</strong>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+
+	<div class="row block-widget" layout="row" layout-wrap layout-padding layout-align="center center">
+		<div flex-"100" id="data-count">
+			<span class="filter-count"></span> selected out of 
+			<span class="total-count"></span> records
+		</div>
+		<div flex="100">
+			<table class="table table-responsive" id="data-table">
+				<thead>
+					<tr class="header">
+						<th>Project</th>
+						<th>Ticket Type</th>
+						<th>Opened Month</th>
+						<th>Volume</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
+	-->
+
+	<div layout="row" layout-padding layout-align="center center">
+		<div ng-repeat="p in proj">
+			{{p.name}}
+			<ul>
+				<li ng-repeat="d in p.data">
+					<span>{{d.sub}}</span> {{d.data}}
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+	

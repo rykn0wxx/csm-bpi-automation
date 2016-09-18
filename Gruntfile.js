@@ -79,7 +79,7 @@ module.exports = function (grunt) {
 			}
     },
 
-		konnect: {
+		aconnect: {
 			options: {
         port: '<%= mudly.port %>',
         // Change this to '0.0.0.0' to access the server from outside.
@@ -169,7 +169,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('kaf', [
 		'wiredep',
 		'less',
-		'connect',
+		'konnect',
 		'watch'
 	]);
 

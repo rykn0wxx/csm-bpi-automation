@@ -1,0 +1,16 @@
+<div flex class="small-box bg-blue rows" ng-repeat="dsk in smlbx.csmsmallbox">
+	<div class="inner">
+		<h3>{{dsk.key[1]}}</h3>
+		<p>{{dsk.key[0]}}</p>	
+		<span>Incident Tickets </span> <strong>{{dsk.value.inc}}</strong>
+		<br/>
+		<span>Task Tickets </span> <strong>{{dsk.value.task}}</strong>
+	</div>
+	<div class="icon">
+		<i class="fa fa-shopping-cart"></i>
+	</div>
+	<a ng-href="#/dashboard/{{dsk.key[0]}}" class="small-box-footer">
+		More info 
+		<i class="fa fa-arrow-circle-right"></i>
+	</a>
+</div>

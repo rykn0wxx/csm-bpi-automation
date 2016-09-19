@@ -148,15 +148,16 @@ angular.module('mud')
 					d.count = 1;
 					d.openedDate = dFormat.parse(d.openedDate);
 					d.resolvedDate = dFormat.parse(d.resolvedDate);
+					d.group = _.filter(config.groups, function(val, i) {return _.includes(val, d.assignedGroup);})[0] || _.set(config.defaultGroup, 'groupName', d.assignedGroup);
 					return d;
 				}, function(data) {
+					/*
 					var tmp = {};
 					tmp.xData = xfilter(data);
 					tmp.dimProj = tmp.xData.dimension(function(d) {return d.projectName;});
 					tmp.dimMonth = tmp.xData.dimension(function(d) {return shortMonth[d3.time.year(d.openedDate).getMonth()] + '-' +d3.time.year(d.openedDate).getFullYear();});
 					tmp.grpMonthOpn = tmp.dimMonth.group().reduceSum(function(d) {return parseInt(d.count);});
 					tmp.grpMonthCls = tmp.dimMonth.group().reduceSum(function(d) {return (d3.time.year(d.resolvedDate).getFullYear() === 1900) ? parseInt(d.count):0;});
-					
 					tmp.grpProj = tmp.dimProj.group().reduce(
 						function(p, v) {
 							++p.count;
@@ -173,14 +174,15 @@ angular.module('mud')
 						}, function() {
 							return {count: 0, openVol: 0, closeVol: 0, latestMonth: 0};
 						});
-					
-					defer.resolve(tmp);
+					*/
+					defer.resolve(xfilter(data));
 				});
 				return defer.promise;
 			}
 
 			function projectList() {
 				var defer = $q.defer();
+
 				d3.csv('assets/datasource/testTickets.csv', function(data) {
 					var nest = d3.nest()
 						.key(function(d) {return d.projectName;})

@@ -17,8 +17,8 @@ function ($routeProvider, $mdThemingProvider, $sceDelegateProvider, $mdAriaProvi
 		'**'
 	]);
 	$mdThemingProvider.theme('default')
-		.primaryPalette('light-blue')
-		.accentPalette('orange')
+		.primaryPalette('blue-grey')
+		.accentPalette('light-blue')
 		.warnPalette('pink')
 		.backgroundPalette('grey', {'default': '500'})
 		.dark();
@@ -62,56 +62,6 @@ function ($routeProvider, $mdThemingProvider, $sceDelegateProvider, $mdAriaProvi
 .controller('GlobalCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
 	$rootScope.doneLoading = false;
 	$scope.currentNavItem = '';
-
-	$scope.projects = [{
-		name: 'JD',
-		data: {
-			newTickets: 123,
-			closeTickets: 100
-		}
-	}, {
-		name: 'CEC',
-		data: {
-			newTickets: 123,
-			closeTickets: 100
-		}
-	}, {
-		name: 'Amcor',
-		data: {
-			newTickets: 123,
-			closeTickets: 100
-		}
-	}, {
-		name: 'Novelis',
-		data: {
-			newTickets: 123,
-			closeTickets: 100
-		}
-	}, {
-		name: 'JD',
-		data: {
-			newTickets: 123,
-			closeTickets: 100
-		}
-	}, {
-		name: 'CEC',
-		data: {
-			newTickets: 123,
-			closeTickets: 100
-		}
-	}, {
-		name: 'Amcor',
-		data: {
-			newTickets: 123,
-			closeTickets: 100
-		}
-	}, {
-		name: 'Novelis',
-		data: {
-			newTickets: 123,
-			closeTickets: 100
-		}
-	}];
 }]);
 
 Date.prototype.yyyymmdd = function() {
@@ -119,4 +69,16 @@ Date.prototype.yyyymmdd = function() {
 	var mm = (this.getMonth() + 1).toString();
 	var dd = this.getDate().toString();
 	return yyyy + ' - ' + (mm[1] ? mm : "0" + mm[0]) + ' - ' + (dd[1] ? dd : "0" + dd[0]);
+};
+Date.prototype.yyyymmm = function() {
+	var shortMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+	var yyyy = this.getFullYear().toString();
+	var mm = shortMonths[this.getMonth()-1];
+	var dd = this.getDate().toString();
+	return yyyy + ' - ' + mm;
+};	
+Date.prototype.startMonth = function() {
+	var yyyy = this.getFullYear();
+	var mm = this.getMonth();
+	return new Date(yyyy, mm, 1);
 };

@@ -1,0 +1,106 @@
+/*********************************************
+ * Custom: Small Box Widget
+ *********************************************/
+@import "_mixins.less";
+@import "vendor/material/_shadows.less";
+
+.small-box {
+	margin: 0 15px 20px 15px;
+	.border-radius(2px);
+	position: relative;
+	display: block;
+	transition: all .5s ease-in-out;
+	.shadow-3dp();
+	min-width: 250px;
+	// content wrapper
+	> .inner {
+		padding: 10px;
+	}
+
+	> .small-box-footer {
+		position: relative;
+		text-align: center;
+		padding: 3px 0;
+		color: #fff;
+		color: rgba(255, 255, 255, 0.8);
+		display: block;
+		z-index: 10;
+		background: rgba(0,0,0,0.1);
+		text-decoration: none;
+		&:hover {
+			color: #fff;
+			background: rgba(0,0,0,0.15);
+		}
+	}
+
+	h3 {
+		font-size: 25px;
+		font-weight: bold;
+		margin: 0 0 10px 0;
+		white-space: nowrap;
+		padding: 0;
+
+	}
+
+	p {
+		font-size: 15px;
+		> small {
+			display: block;
+			color: #f9f9f9;
+			font-size: 13px;
+			margin-top: 5px;
+		}
+	}
+
+	h3, p {
+		z-index: 5px;
+	}
+
+	// the icon
+	.icon {
+		transition: all .5s ease-in-out;
+		position: absolute;
+		top: -10px;
+		right: 10px;
+		z-index: 0;
+		font-size: 90px;
+		color: rgba(0, 0, 0, 0.15);
+	}
+
+	// Small box hover state
+	&:hover {
+		.blue-shadow-z-1-hover();
+		text-decoration: none;
+		color: #f9f9f9;
+		// Animate icons on small box hover
+		.icon {
+			font-size: 95px;
+		}
+	}
+}
+
+@media (max-width: @screen-xs-max) {
+	// No need for icons on very small devices
+	.small-box {
+		text-align: center;
+		h3 {
+			font-size: 14px;
+		}
+		.icon {
+			display: none;
+		}
+		p {
+			font-size: 12px;
+		}
+	}
+}
+
+@media (max-width: @screen-sm-max) {
+	// No need for icons on very small devices
+	.small-box {
+		text-align: center;
+		h3 {
+			font-size: 14px;
+		}
+	}
+}

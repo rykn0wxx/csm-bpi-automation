@@ -1,3 +1,4 @@
+<div class="wrapping">
 <ng-include src="'assets/views/top-menu.html'"></ng-include>
 	<!--
 	<div ng-model="tcounter">
@@ -30,7 +31,23 @@
 		</div>
 	</div>
 	-->
+	<section class="content-header">
+		<h3>
+			Main Dashboard <small>Novelis</small>
+		</h3>
+	</section>
 
+	<div class="row" layout="row" layout-wrap layout-padding layout-align="space-around center">
+		<csm-smallbox csmsmallbox="deskinfo"></csm-smallbox>
+	</div>	
+
+	<div class="row block-widget" layout="row" layout-wrap layout-padding layout-align="space-around center">
+		<div id="test" class="dc-chart">
+			<strong>Projects</strong>
+			<div class="clearfix"></div>
+		</div>
+		<div id="test1"></div>
+	</div>
 	<div layout="row" layout-padding layout-align="center center">
 		<div ng-repeat="p in proj">
 			{{p.name}}
@@ -42,4 +59,5 @@
 		</div>
 		
 	</div>
-	
+
+</div>

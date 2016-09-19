@@ -7,6 +7,7 @@
 @import "vendor/bootstrap/less/mixins.less";
 @import "vendor/material/_shadows.less";
 
+@import "_mixins.less";
 @import "_animation.less";
 @import "_var.less";
 
@@ -65,7 +66,7 @@ a {
 }
 
 .spacer {
-	height: 60px;
+	height: 15px;
 	.clearfix();
 }
 
@@ -88,6 +89,28 @@ a {
 }
 
 //
+@keyframes activate {
+from {
+    opacity: 0;
+		transform:scale(.1);
+		display: none;
+}
+	50% {
+		opacity: 0.5;
+	}
+to {
+    opacity: 1;
+    transform:scale(1);
+    display: block !important;
+}
+}
+.rows {
+	-webkit-animation: activate 1sec ease;
+	-moz-animation: activate 1sec ease;
+	-ms-animation: activate 1sec ease;
+	-o-animation: activate 1sec ease;
+	animation: activate 1sec ease;
+}
 
 #preloader {
 	position: fixed;
@@ -348,6 +371,17 @@ md-toolbar {
 	top: 0px;
 	left: 0px;
 	right: 0px;
+	background: rgba(0,0,0,0.85);
+}
+
+.content-header {
+	position: relative;
+	padding: 15px 15px 0 15px;
+	h1, h2, h3, h4 {
+		margin: 0;
+		font-size: 18px;
+		font-weight: 500;
+	}
 }
 
 // 
@@ -494,3 +528,9 @@ table {
     }
   }
 }
+
+/*********************************************
+ * Custom: Components
+ *********************************************/
+@import "_misc.less";
+@import "_smallbox.less";

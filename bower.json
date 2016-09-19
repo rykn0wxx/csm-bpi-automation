@@ -36,6 +36,13 @@
       "main": [
         "dist/lodash.js"
       ]
+    },
+    "dcjs": {
+      "main": [
+        "dc.js",
+
+        "dc.css"
+      ]
     }
 	}
 }
